@@ -1,0 +1,52 @@
+
+.container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+  align-items: center;
+  height: 100%;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+  padding-top: 25vh;
+  width: min(400px, 100%)
+}
+
+.toggle {
+  width: 100%;
+}
+
+.btn-content {
+  color: #fff;
+}
+
+.btn {
+  background-color: transparent;
+  color: white;
+  width: 100%;
+}
+
+.btn:active {
+  background: #3c3f41;
+}
+
+.btn:hover {
+  background: #3c3f41;
+}
+
+.active {
+  border: 1px solid #fff;
+}
+
+.mat-pseudo-checkbox {
+  display: none;
+}
+

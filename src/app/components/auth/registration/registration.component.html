@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="form" [formGroup]="registrationForm">
+    <div class="form-item">
+      <div class="item-title">Логин</div>
+      <input formControlName="login" class="item-input" [class.error]="registrationForm.get('login')?.errors">
+    </div>
+    <div class="form-item">
+      <div class="item-title">Имя</div>
+      <input formControlName="firstName" class="item-input" [class.error]="registrationForm.get('firstName')?.errors">
+    </div>
+    <div class="form-item">
+      <div class="item-title">Фамилия</div>
+      <input formControlName="lastName" class="item-input" [class.error]="registrationForm.get('lastName')?.errors">
+    </div>
+    <div class="form-item">
+      <div class="item-title">Пароль</div>
+      <input formControlName="password" class="item-input" [class.error]="registrationForm.get('password')?.errors">
+    </div>
+    <div class="controls">
+      <button id="my-button" [disabled]="registrationForm.invalid || registrationForm.pristine" (click)="submit()"
+              class="btn" mat-button>
+        <div class="btn-content" [class.disabled]="registrationForm.invalid || registrationForm.pristine">Войти</div>
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="header-wrapper">
+    <div class="header">
+      <div class="logo">Gallery</div>
+      <div class="user" [matMenuTriggerFor]="menu">
+        <div class="user-avatar">
+          <mat-icon>account_circle</mat-icon>
+        </div>
+        <div class="user-name">{{ loginService.user()?.firstName }}</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<mat-menu #menu="matMenu">
+  <button mat-menu-item (click)="loginService.logout()">
+    <mat-icon>logout</mat-icon>
+    <span>Выйти</span>
+  </button>
+</mat-menu>

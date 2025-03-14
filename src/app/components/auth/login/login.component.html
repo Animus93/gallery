@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="form" [formGroup]="loginForm">
+    <div class="form-item">
+      <div class="item-title">Логин</div>
+      <input formControlName="login" class="item-input" [class.error]="loginForm.get('login')?.errors">
+    </div>
+    <div class="form-item">
+      <div class="item-title">Пароль</div>
+      <input formControlName="password" class="item-input" [class.error]="loginForm.get('password')?.errors">
+    </div>
+    <div class="controls">
+      <button id="my-button" [disabled]="loginForm.invalid || loginForm.pristine" (click)="login()"
+              class="btn" mat-button>
+        <div class="btn-content" [class.disabled]="loginForm.invalid || loginForm.pristine">Войти</div>
+      </button>
+    </div>
+  </div>
+</div>

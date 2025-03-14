@@ -1,1 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+:root {
+  --mat-sys-inverse-surface: #a22d2d;
+  --mat-sys-inverse-primary: #e1e1e1;
+  /*--mat-sys-primary: #0059ff*/
+}

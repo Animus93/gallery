@@ -1,0 +1,30 @@
+.container {
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  border-radius: 8px;
+  column-gap: 24px;
+  background-color: var(--white-color);
+  box-shadow: var(--backdrop-shadow);
+}
+
+.avatar {
+  display: flex;
+  border-radius: 50%;
+  height: 100%;
+  width: 50px;
+}
+
+.name {
+  color: var(--typographic-color);
+  font-weight: bold;
+  font-size: 36px;
+}
+.date {
+  color: var(--typographic-color);
+  font-size: 16px;
+  font-weight: bold;
+}
+.time {
+  color: var(--sub-typographic-color);
+}

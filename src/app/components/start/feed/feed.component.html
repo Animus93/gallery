@@ -1,0 +1,19 @@
+<div class="container">
+  <button class="new-post-btn" mat-button (click)="createPost()">
+    <div class="new-post">
+      <mat-icon svgIcon="create"></mat-icon>
+      <div>Создать пост</div>
+    </div>
+  </button>
+  @if (false) {
+
+  } @else {
+    <div class="container empty-content">
+      <img [src]="'assets/images/bg'+randomNumber()+'.webp'" alt="Нет постов"/>
+      <div class="empty-text">
+        <h2>На данный момент нет постов</h2>
+        <h3>Создайте первый пост и его увидят все пользователи</h3>
+      </div>
+    </div>
+  }
+</div>

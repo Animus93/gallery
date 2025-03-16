@@ -4,12 +4,18 @@
       <button mat-button routerLink="login"
               routerLinkActive="active"
               class="btn">
-        <div class="btn-content">Войти</div>
+        <div class="btn-content">
+          <div>Войти</div>
+          <mat-icon svgIcon="login"></mat-icon>
+        </div>
       </button>
       <button mat-button routerLink="registration"
               routerLinkActive="active"
               class="btn">
-        <div class="btn-content">Регистрация</div>
+        <div class="btn-content">
+          <div>Регистрация</div>
+          <mat-icon svgIcon="add_person"></mat-icon>
+        </div>
       </button>
     </div>
     <router-outlet></router-outlet>

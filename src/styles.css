@@ -6,11 +6,56 @@ html, body {
 
 body {
   margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+  /*font-family: Roboto, "Helvetica Neue", sans-serif;*/
+  font-family: "Open Sans", sans-serif;
+  color: var(--typographic-color);
+  overflow-y: scroll;
 }
 
 :root {
   --mat-sys-inverse-surface: #a22d2d;
   --mat-sys-inverse-primary: #e1e1e1;
-  /*--mat-sys-primary: #0059ff*/
+  --white-color: #e5e5e5;
+  --hover-color: #76adcb;
+  --active-color: #97d4ff;
+  --typographic-color: #3c3f41;
+  --sub-typographic-color: #7d828a;
+  --backdrop-shadow: 0 2px 4px rgba(0, 0, 0, .1);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+}
+
+ul, li, a {
+  all: initial;
+}
+
+a {
+  cursor: pointer;
+  font-family: "Open Sans", sans-serif;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+mat-dialog-content::-webkit-scrollbar-track {
+  background: var(--white-color);
+}
+
+::-webkit-scrollbar-track {
+  background: var(--typographic-color);
+  /*border-radius: 10px;*/
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--sub-typographic-color);
+  border-radius: 10px;
+  /*border: 1px solid var(--white-color);*/
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }

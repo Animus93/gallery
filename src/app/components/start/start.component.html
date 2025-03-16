@@ -4,10 +4,35 @@
       <div class="logo">Gallery</div>
       <div class="user" [matMenuTriggerFor]="menu">
         <div class="user-avatar">
-          <mat-icon>account_circle</mat-icon>
+          <mat-icon svgIcon="user"></mat-icon>
         </div>
         <div class="user-name">{{ loginService.user()?.firstName }}</div>
       </div>
+    </div>
+  </div>
+  <div class="content">
+    <nav>
+      <ul class="nav-container">
+        <li>
+          <a class="nav-item" routerLink="feed" routerLinkActive="active">
+            <div class="link-content">
+              <mat-icon svgIcon="feed"></mat-icon>
+              <div>Лента</div>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a class="nav-item" routerLink="users" routerLinkActive="active">
+            <div class="link-content">
+              <mat-icon svgIcon="users"></mat-icon>
+              <div>Пользователи</div>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <div class="outlet">
+      <router-outlet></router-outlet>
     </div>
   </div>
 </div>
@@ -16,5 +41,9 @@
   <button mat-menu-item (click)="loginService.logout()">
     <mat-icon>logout</mat-icon>
     <span>Выйти</span>
+  </button>
+  <button mat-menu-item (click)="userProfile()">
+    <mat-icon svgIcon="user"></mat-icon>
+    <span>Профиль</span>
   </button>
 </mat-menu>

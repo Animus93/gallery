@@ -1,8 +1,9 @@
-import {Component, effect} from '@angular/core';
+import {ChangeDetectionStrategy, Component, effect} from '@angular/core';
 import {Router, RouterLink, RouterLinkActive, RouterOutlet} from '@angular/router';
 import {ReactiveFormsModule} from '@angular/forms';
 import {MatButton} from '@angular/material/button';
 import {AuthService} from './auth.service';
+import {MatIcon} from '@angular/material/icon';
 
 @Component({
   selector: 'app-auth',
@@ -11,10 +12,12 @@ import {AuthService} from './auth.service';
     RouterLinkActive,
     RouterOutlet,
     ReactiveFormsModule,
-    MatButton
+    MatButton,
+    MatIcon
   ],
   templateUrl: './auth.component.html',
-  styleUrl: './auth.component.css'
+  styleUrl: './auth.component.css',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AuthComponent {
 

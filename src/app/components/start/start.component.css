@@ -3,23 +3,63 @@
   flex-direction: column;
   min-height: 100%;
   min-width: 100%;
+  justify-content: center;
+  align-items: center;
 }
 
 .header-wrapper {
   border-bottom: 1px #3c5567 solid;
   display: flex;
+  width: 100%;
   justify-content: center;
 }
 
+.content {
+  width: 100%;
+  max-width: 1280px;
+  padding: 24px;
+  box-sizing: border-box;
+  display: flex;
+  column-gap: 24px;
+}
+
+.nav-container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+}
+
 .header {
+  width: 100%;
+  max-width: 1280px;
   padding: 0 24px;
   box-sizing: border-box;
   min-height: 65px;
-  width: 100%;
-  max-width: 1280px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.active {
+  color: var(--active-color) !important;
+}
+.nav-item {
+  color: var(--white-color);
+}
+.link-content {
+  display: flex;
+  align-items: center;
+  column-gap: 5px;
+  transition: ease-in 0.1s;
+  min-width: 100px;
+  padding: 6px 12px;
+  box-sizing: border-box;
+  border-radius: 8px;
+}
+
+.test {
+  color: #ff9797;
+  fill: red;
 }
 
 .user {
@@ -34,11 +74,23 @@
 .user-avatar {
   height: 24px;
 }
-
+.outlet{
+  flex: 1;
+}
 .user:hover {
-  color: #76adcb;
+  color: var(--hover-color);
 }
 
 .user:active {
-  color: #97d4ff;
+  color: var(--active-color);
+}
+
+.link-content:hover {
+  background-color: var(--hover-color);
+  color: #fff;
+}
+
+.link-content:active {
+  background-color: var(--active-color);
+  color: #fff;
 }

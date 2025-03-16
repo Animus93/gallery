@@ -1,0 +1,129 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  /*padding: 24px;*/
+  /*box-sizing: border-box;*/
+  align-items: center;
+  row-gap: 16px;
+  /*height: 100%;*/
+  /*max-height: 100vh;*/
+  overflow: hidden;
+  background-color: var(--white-color);
+}
+
+header, footer {
+  width: 100%;
+  min-height: 55px;
+  padding: 0 24px;
+  box-sizing: border-box;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: 100%;
+}
+
+.content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 24px;
+}
+
+.item {
+  label {
+    font-size: 12px;
+    font-weight: 500;
+  }
+
+  input {
+    outline: none;
+    border: 1px solid var(--sub-typographic-color);
+    color: var(--typographic-color);
+    font-size: 16px;
+    font-family: "Open Sans", sans-serif;
+    padding: 16px;
+    box-sizing: border-box;
+    border-radius: 8px;
+  }
+
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  column-gap: 24px;
+}
+
+.avatar {
+  img {
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+  }
+
+  .edit {
+    position: absolute;
+    background-color: #fff;
+    border-radius: 50%;
+    padding: 3px;
+    box-sizing: border-box;
+    width: 30px;
+    height: 30px;
+    color: var(--typographic-color);
+    right: 0;
+    bottom: 0;
+    cursor: pointer;
+    opacity: 0;
+    transition: ease-in-out .2s;
+  }
+
+  input {
+    display: none;
+  }
+
+  &:hover .edit {
+    opacity: 1;
+  }
+
+  position: relative;
+  height: 100px;
+  width: 100px;
+  /*height: 100%;*/
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--sub-typographic-color);
+}
+
+.shadow {
+  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2), 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.disabled {
+  color: gray !important;
+}
+
+.error {
+  border: 1px solid #d55e5e !important;
+}

@@ -1,0 +1,21 @@
+<div class="container">
+  <header #block>
+    <h1>Новый пост</h1>
+  </header>
+  <mat-dialog-content #content class="content">
+    <div class="block">
+      <label class="block-title">Изображение</label>
+      <label for="file-input" class="file-upload">
+        <mat-icon class="icon" svgIcon="create"></mat-icon>
+        <input type="file" id="file-input" class="hide">
+      </label>
+    </div>
+    <div class="block">
+      <label class="block-title">Текст поста</label>
+      <textarea class="text-content"></textarea>
+    </div>
+  </mat-dialog-content>
+  <footer #block class="controls">
+    <button mat-button>Опубликовать</button>
+  </footer>
+</div>

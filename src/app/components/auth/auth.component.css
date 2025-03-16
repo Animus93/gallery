@@ -26,8 +26,10 @@
 
 .btn-content {
   color: #fff;
+  display: flex;
+  align-items: center;
+  column-gap: 16px;
 }
-
 .btn {
   background-color: transparent;
   color: white;

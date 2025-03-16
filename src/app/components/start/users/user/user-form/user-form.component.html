@@ -1,0 +1,45 @@
+<div class="container">
+  <header #block>
+    <h1>Профиль пользователя {{ userForm.get('lastName')?.value + ' ' + userForm.get('firstName')?.value }}</h1>
+  </header>
+  <mat-dialog-content #content class="content">
+    <form [formGroup]="userForm">
+      <div class="row">
+        <div class="avatar">
+          <label for="file-input" class="edit">
+            <mat-icon svgIcon="edit"></mat-icon>
+          </label>
+          <input type="file" id="file-input" (change)="upload($event)">
+          @if (userForm.get('avatar')?.value && !imageSrc) {
+            <img [src]="userForm.get('avatar')?.value" alt="Фотография">
+          } @else if (imageSrc) {
+            <img [src]="imageSrc" alt="Загрузить фотографию">
+          } @else {
+            <img src="assets/images/icons/user.svg" alt="Аватар профиля">
+          }
+        </div>
+        <div class="item">
+          <label>Логин</label>
+          <input formControlName="login" [class.error]="userForm.get('login')?.errors"/>
+        </div>
+        <div class="item">
+          <label>Пароль</label>
+          <input formControlName="password" [class.error]="userForm.get('password')?.errors"/>
+        </div>
+      </div>
+      <div class="item">
+        <label>Имя</label>
+        <input formControlName="firstName" [class.error]="userForm.get('firstName')?.errors"/>
+      </div>
+      <div class="item">
+        <label>Фамилия</label>
+        <input formControlName="lastName" [class.error]="userForm.get('lastName')?.errors"/>
+      </div>
+    </form>
+  </mat-dialog-content>
+  <footer #block class="controls">
+    <button mat-button [disabled]="userForm.invalid || userForm.pristine"
+            (click)="onSubmit()">Сохранить
+    </button>
+  </footer>
+</div>

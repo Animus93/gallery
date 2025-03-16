@@ -3,12 +3,17 @@ import {StartComponent} from './components/start/start.component';
 import {LoginComponent} from './components/auth/login/login.component';
 import {RegistrationComponent} from './components/auth/registration/registration.component';
 import {AuthComponent} from './components/auth/auth.component';
+import {authGuard} from './guards/auth.guard';
 
 export const routes: Routes = [
   {path: '', pathMatch: 'full', redirectTo: 'start'},
   {
     path: 'start',
-    component: StartComponent,
+    canActivate: [authGuard],
+    loadChildren: () =>
+      import('./components/start/start.routes').then(
+        (mod) => mod.START_ROUTES
+      ),
   },
   {
     path: 'auth',
@@ -25,4 +30,5 @@ export const routes: Routes = [
       },
     ]
   },
+  {path: '**', pathMatch: 'full', redirectTo: 'start'},
 ];

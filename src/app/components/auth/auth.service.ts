@@ -1,21 +1,18 @@
 import {Injectable, signal} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {MatSnackBar} from '@angular/material/snack-bar';
-import {Observable} from 'rxjs';
+import {DataBase} from '../../enums/database.enum';
+import {User} from '../../interfaces/user.interface';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  private baseUrl: string = 'http://localhost:3000';
-  public user = signal<any>(null)
+  private baseUrl: string = DataBase.url;
+  public user = signal<User | null>(null)
   alertTimer: any = null
 
   constructor(private http: HttpClient, private bar: MatSnackBar) {
-  }
-
-  getUser(): Observable<any> {
-    return this.http.get(`${this.baseUrl}/user/profile`)
   }
 
   login(user: any) {

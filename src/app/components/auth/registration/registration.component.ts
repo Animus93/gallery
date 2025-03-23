@@ -3,6 +3,8 @@ import {FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators} fr
 import {MatButton} from '@angular/material/button';
 import {Subject, takeUntil} from 'rxjs';
 import {AuthService} from '../auth.service';
+import {UsersService} from '../../start/users/users.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-registration',
@@ -24,7 +26,9 @@ export class RegistrationComponent implements OnInit, OnDestroy {
     password: new FormControl<string>('', [Validators.required]),
   })
 
-  constructor(public authService: AuthService) {
+  constructor(public authService: AuthService,
+    private usersService: UsersService,
+    private router: Router) {
   }
 
   ngOnInit() {
@@ -32,15 +36,10 @@ export class RegistrationComponent implements OnInit, OnDestroy {
 
   submit() {
     this.authService.singUp(this.registrationForm.value).pipe(takeUntil(this._unsubscribe)).subscribe({
-      next: (data: any) => {
-        if (data.access_token) {
-          localStorage.setItem('token', data.access_token);
-          window.location.reload();
-        }
+      next: () => {
+        this.router.navigate(['/start'])
       },
-      error: error => {
-        this.authService.alert(error);
-      }
+      error: error => this.authService.alert(error)
     })
   }
 

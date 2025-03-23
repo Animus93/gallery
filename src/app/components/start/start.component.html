@@ -4,9 +4,13 @@
       <div class="logo">Gallery</div>
       <div class="user" [matMenuTriggerFor]="menu">
         <div class="user-avatar">
-          <mat-icon svgIcon="user"></mat-icon>
+          @if (usersService.user()?.imgPath) {
+            <img class="avatar" [src]="DataBase.avatars+usersService.user()?.imgPath" alt="Аватар профиля">
+          } @else {
+            <mat-icon class="avatar" svgIcon="user"></mat-icon>
+          }
         </div>
-        <div class="user-name">{{ loginService.user()?.firstName }}</div>
+        <div class="user-name">{{ usersService.user()?.firstName }}</div>
       </div>
     </div>
   </div>
@@ -38,12 +42,15 @@
 </div>
 
 <mat-menu #menu="matMenu">
-  <button mat-menu-item (click)="loginService.logout()">
+  <button mat-menu-item (click)="userProfile()">
+<!--    <div class="btn">-->
+      <mat-icon class="test" svgIcon="user"></mat-icon>
+      <span>Профиль</span>
+<!--    </div>-->
+  </button>
+  <mat-divider></mat-divider>
+  <button class="btn" mat-menu-item (click)="authService.logout()">
     <mat-icon>logout</mat-icon>
     <span>Выйти</span>
-  </button>
-  <button mat-menu-item (click)="userProfile()">
-    <mat-icon svgIcon="user"></mat-icon>
-    <span>Профиль</span>
   </button>
 </mat-menu>

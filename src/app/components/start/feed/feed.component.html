@@ -5,8 +5,11 @@
       <div>Создать пост</div>
     </div>
   </button>
-  @if (false) {
-
+  @if (posts().length) {
+    @for (post of posts(); track post.id) {
+      <app-post [post]="post"
+      (eventEmitter)="handleEvent($event)"></app-post>
+    }
   } @else {
     <div class="container empty-content">
       <img [src]="'assets/images/bg'+randomNumber()+'.webp'" alt="Нет постов"/>

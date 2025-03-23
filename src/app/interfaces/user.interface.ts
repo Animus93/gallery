@@ -1,7 +1,8 @@
 import {Post} from './post.interface';
 
 export interface User {
-  avatar: File | null;
+  avatar?: File | null;
+  imgPath: string;
   id?: number;
   login?: string;
   firstName: string;

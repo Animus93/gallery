@@ -3,6 +3,8 @@ import {MatButton} from '@angular/material/button';
 import {Subject, takeUntil} from 'rxjs';
 import {AuthService} from '../auth.service';
 import {FormControl, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
+import {UsersService} from '../../start/users/users.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -21,23 +23,20 @@ export class LoginComponent implements OnInit, OnDestroy {
     password: new FormControl<string>('', [Validators.required]),
   })
 
-  constructor(public loginService: AuthService) {
+  constructor(public authService: AuthService,
+    private usersService: UsersService,
+    private router: Router) {
   }
 
   ngOnInit() {
   }
 
   login() {
-    this.loginService.login(this.loginForm.value).pipe(takeUntil(this._unsubscribe)).subscribe({
-      next: (data: any) => {
-        if (data.access_token) {
-          localStorage.setItem('token', data.access_token);
-          window.location.reload();
-        }
+    this.authService.login(this.loginForm.value).pipe(takeUntil(this._unsubscribe)).subscribe({
+      next: () => {
+        this.router.navigate(['/start'])
       },
-      error: error => {
-        this.loginService.alert(error);
-      }
+      error: error => this.authService.alert(error)
     })
   }
 

@@ -41,9 +41,7 @@
   border-radius: 40px;
   padding: 8px 16px;
 }
-.disabled {
-  color: gray !important;
-}
+
 .error {
   border: 1px solid #d55e5e;
 }

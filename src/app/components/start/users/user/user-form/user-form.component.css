@@ -120,10 +120,6 @@ form {
   box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2), 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.disabled {
-  color: gray !important;
-}
-
 .error {
   border: 1px solid #d55e5e !important;
 }

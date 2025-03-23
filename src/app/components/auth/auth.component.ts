@@ -13,7 +13,7 @@ import {MatIcon} from '@angular/material/icon';
     RouterOutlet,
     ReactiveFormsModule,
     MatButton,
-    MatIcon
+    MatIcon,
   ],
   templateUrl: './auth.component.html',
   styleUrl: './auth.component.css',
@@ -21,9 +21,10 @@ import {MatIcon} from '@angular/material/icon';
 })
 export class AuthComponent {
 
-  constructor(private authService: AuthService, private router: Router) {
+  constructor(public authService: AuthService, private router: Router) {
     effect(() => {
-      if (this.authService.user()) {
+      const token = localStorage.getItem('token');
+      if (token) {
         this.router.navigate(['start']);
       }
     });

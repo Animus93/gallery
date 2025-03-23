@@ -21,6 +21,9 @@
   font-weight: 400;
   color: var(--white-color);
 }
+app-post {
+  width: 100%;
+}
 
 .empty-content {
   border: 3px solid var(--sub-typographic-color);

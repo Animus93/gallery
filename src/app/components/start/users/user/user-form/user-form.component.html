@@ -10,10 +10,10 @@
             <mat-icon svgIcon="edit"></mat-icon>
           </label>
           <input type="file" id="file-input" (change)="upload($event)">
-          @if (userForm.get('avatar')?.value && !imageSrc) {
-            <img [src]="userForm.get('avatar')?.value" alt="Фотография">
-          } @else if (imageSrc) {
-            <img [src]="imageSrc" alt="Загрузить фотографию">
+          @if (userForm.get('imgPath')?.value && !imageSrc()) {
+            <img [src]="DataBase.avatars+userForm.get('imgPath')?.value" alt="Фотография">
+          } @else if (imageSrc()) {
+            <img [src]="imageSrc()" alt="Загрузить фотографию">
           } @else {
             <img src="assets/images/icons/user.svg" alt="Аватар профиля">
           }

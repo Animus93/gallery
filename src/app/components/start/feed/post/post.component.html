@@ -1,1 +1,40 @@
-<p>post works!</p>
+@if (post()) {
+  <div class="container">
+    <div class="header">
+      <div class="row">
+        <div class="avatar-wrapper">
+          @if (post().author?.imgPath) {
+            <img class="avatar" [src]="DataBase.avatars+post().author?.imgPath" alt="Аватар профиля">
+          } @else {
+            <div class="avatar" [style.background-color]="bg">
+              {{ [post().author.firstName[0], post().author.lastName[0]].join('') }}
+            </div>
+          }
+        </div>
+        <div class="name">
+          {{ [post().author.firstName, post().author.lastName].join(' ') }}
+        </div>
+      </div>
+      @if (post().authorId === userId) {
+        <div class="controls">
+          <button mat-icon-button class="edit" (click)="onEditPost()">
+            <mat-icon svgIcon="edit"></mat-icon>
+          </button>
+          <button mat-icon-button class="delete" (click)="onDeletePost()">
+            <mat-icon svgIcon="delete"></mat-icon>
+          </button>
+        </div>
+      }
+    </div>
+    <div class="content">
+      @if (post().imgPath) {
+        <img class="post-img" [src]="DataBase.posts+post().imgPath" alt="Картинка из поста">
+      }
+      @if (post().text) {
+        <div class="text">
+          {{ post().text }}
+        </div>
+      }
+    </div>
+  </div>
+}

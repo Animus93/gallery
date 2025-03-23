@@ -43,9 +43,11 @@
 .active {
   color: var(--active-color) !important;
 }
+
 .nav-item {
   color: var(--white-color);
 }
+
 .link-content {
   display: flex;
   align-items: center;
@@ -72,11 +74,20 @@
 }
 
 .user-avatar {
-  height: 24px;
+  height: 36px;
+  width: 36px;
+  border-radius: 50%;
+  overflow: hidden;
+  .avatar {
+    width: 100%;
+    height: 100%;
+  }
 }
-.outlet{
+
+.outlet {
   flex: 1;
 }
+
 .user:hover {
   color: var(--hover-color);
 }
@@ -94,3 +105,12 @@
   background-color: var(--active-color);
   color: #fff;
 }
+
+/*.btn {*/
+/*  color: var(--typographic-color) !important;*/
+/*  fill: red;*/
+/*  display: flex;*/
+/*  align-items: center;*/
+/*  column-gap: 8px;*/
+/*  justify-content: space-between;*/
+/*}*/

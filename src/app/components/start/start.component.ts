@@ -5,6 +5,9 @@ import {MatMenu, MatMenuItem, MatMenuTrigger} from '@angular/material/menu';
 import {RouterLink, RouterLinkActive, RouterOutlet} from '@angular/router';
 import {MatDialog} from '@angular/material/dialog';
 import {UserFormComponent} from './users/user/user-form/user-form.component';
+import {UsersService} from './users/users.service';
+import {MatDivider} from '@angular/material/divider';
+import {DataBase} from '../../enums/database.enum';
 
 @Component({
   selector: 'app-start',
@@ -15,7 +18,8 @@ import {UserFormComponent} from './users/user/user-form/user-form.component';
     MatMenuItem,
     RouterOutlet,
     RouterLink,
-    RouterLinkActive
+    RouterLinkActive,
+    MatDivider
   ],
   templateUrl: './start.component.html',
   styleUrl: './start.component.css',
@@ -23,7 +27,8 @@ import {UserFormComponent} from './users/user/user-form/user-form.component';
 
 })
 export class StartComponent {
-  constructor(public loginService: AuthService,
+  constructor(public usersService: UsersService,
+    public authService: AuthService,
     private dialog: MatDialog) {
   }
 
@@ -33,4 +38,6 @@ export class StartComponent {
       width: '100%',
     })
   }
+
+  protected readonly DataBase = DataBase;
 }

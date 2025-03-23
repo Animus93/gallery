@@ -19,7 +19,7 @@ export class AppComponent implements OnInit, OnDestroy {
   private _unsubscribe = new Subject<any>();
   title = 'gallery';
 
-  constructor(public loginService: AuthService,
+  constructor(public authService: AuthService,
     private usersService: UsersService,
     private router: Router, private iconRegistry: MatIconRegistry, sanitizer: DomSanitizer) {
     const resolver: IconResolver = (name: string) => sanitizer
@@ -28,17 +28,8 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    this.usersService.getUser().pipe(takeUntil(this._unsubscribe)).subscribe({
-      next: (result) => {
-        (this.loginService.user.set(result.user))
-      },
-      error: (error) => {
-        if (!this.loginService.user() && !this.router.url.includes('auth')) {
-          this.router.navigate(['auth']);
-        }
-      },
-    })
   }
+
 
   ngOnDestroy() {
     this._unsubscribe.next(null);

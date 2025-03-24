@@ -62,6 +62,10 @@ export class UserFormComponent implements AfterViewInit, OnInit, OnDestroy {
     })
   }
 
+  onDelete(): void {
+    this.authService.alert('Удалить аккаунт? Все данные и публикации будут утеряны!', 'Удалить')
+  }
+
   updateForm(user: User) {
     this.userForm.patchValue({
       firstName: user?.firstName,

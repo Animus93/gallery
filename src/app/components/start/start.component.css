@@ -20,7 +20,7 @@
   padding: 24px;
   box-sizing: border-box;
   display: flex;
-  column-gap: 24px;
+  gap: 24px;
 }
 
 .nav-container {
@@ -78,6 +78,7 @@
   width: 36px;
   border-radius: 50%;
   overflow: hidden;
+
   .avatar {
     width: 100%;
     height: 100%;
@@ -114,3 +115,15 @@
 /*  column-gap: 8px;*/
 /*  justify-content: space-between;*/
 /*}*/
+@media (max-width: 800px) {
+  .content {
+    flex-direction: column;
+  }
+  .nav-container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: fit-content;
+    margin: 0 auto;
+  }
+}

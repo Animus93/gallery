@@ -1,8 +1,9 @@
 .container {
   position: relative;
   background-color: #3c3f41;
-  min-height: 100%;
+  /*min-height: 100%;*/
   color: #e1e1e1;
+  min-height: 100vh;
 }
 
 /*.container::before {*/

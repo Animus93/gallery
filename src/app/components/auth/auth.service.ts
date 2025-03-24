@@ -26,7 +26,6 @@ export class AuthService {
   singUp(user: any): Observable<void> {
     return this.http.post(`${this.baseUrl}/auth/singUp`, user).pipe(map((data: any) => {
       localStorage.setItem('token', data.access_token);
-      this
       return null
     }))
   }

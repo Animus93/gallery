@@ -38,6 +38,8 @@
     </form>
   </mat-dialog-content>
   <footer #block class="controls">
+    <button mat-button (click)="onDelete()">Удаить
+    </button>
     <button mat-button [disabled]="userForm.invalid || userForm.pristine"
             (click)="onSubmit()">Сохранить
     </button>

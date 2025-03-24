@@ -18,8 +18,8 @@
 }
 
 .avatar-wrapper {
-  width: 36px;
-  height: 36px;
+  min-width: 40px;
+  height: 40px;
   border-radius: 50%;
   color: var(--white-color);
 
@@ -74,4 +74,7 @@
 
 .delete:hover {
   color: var(--warn-color);
+}
+.controls {
+  display: flex;
 }

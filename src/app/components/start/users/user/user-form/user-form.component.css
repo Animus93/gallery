@@ -4,11 +4,16 @@
   /*padding: 24px;*/
   /*box-sizing: border-box;*/
   align-items: center;
-  row-gap: 16px;
+  /*row-gap: 16px;*/
   /*height: 100%;*/
   /*max-height: 100vh;*/
   overflow: hidden;
   background-color: var(--white-color);
+}
+
+.form-title {
+  font-size: 19px;
+  text-align: center;
 }
 
 header, footer {
@@ -71,7 +76,9 @@ form {
 .row {
   display: flex;
   align-items: center;
-  column-gap: 24px;
+  gap: 24px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .avatar {

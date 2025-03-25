@@ -1,6 +1,6 @@
 <div class="container">
   <header #block>
-    <h1>Профиль пользователя {{ userForm.get('lastName')?.value + ' ' + userForm.get('firstName')?.value }}</h1>
+    <h1 class="form-title">Профиль пользователя {{ userForm.get('lastName')?.value + ' ' + userForm.get('firstName')?.value }}</h1>
   </header>
   <mat-dialog-content #content class="content">
     <form [formGroup]="userForm">

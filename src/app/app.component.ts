@@ -1,6 +1,6 @@
 import {ChangeDetectionStrategy, Component, OnDestroy, OnInit} from '@angular/core';
 import {AuthService} from './components/auth/auth.service';
-import {Subject, takeUntil} from 'rxjs';
+import {Subject} from 'rxjs';
 import {Router, RouterOutlet,} from '@angular/router';
 import {IconResolver, MatIconRegistry} from '@angular/material/icon';
 import {DomSanitizer} from '@angular/platform-browser';
@@ -23,7 +23,7 @@ export class AppComponent implements OnInit, OnDestroy {
     private usersService: UsersService,
     private router: Router, private iconRegistry: MatIconRegistry, sanitizer: DomSanitizer) {
     const resolver: IconResolver = (name: string) => sanitizer
-      .bypassSecurityTrustResourceUrl(`/assets/images/icons/${name}.svg`);
+      .bypassSecurityTrustResourceUrl(`./assets/images/icons/${name}.svg`);
     iconRegistry.addSvgIconResolver(resolver)
   }
 
